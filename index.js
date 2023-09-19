@@ -1,13 +1,27 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+  for (let i = 0; i < array.length; i++) {
+    const sum = target - array[i];
 
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === sum) {
+        return true;
+      } 
+    }
+  }
+  return false;
+}
 /* 
   Write the Big O time complexity of your function here
 */
 
 /* 
   Add your pseudocode here
+  1. Loop through the array of numbers
+    2. i = the current number, need to identify which corresponding number adds up to the target
+    3. Loop through the remaining numbers = sum
+    4. If the two numbers = the sum then return true
+  5. If none add up to target, return false
 */
 
 /*
